@@ -33,13 +33,13 @@ def cost(theta, X, y):
     cost_ = cost_/(2 * len(X))
     return cost_
 
-def gradient_descent(theta, X, y, alpha=1):
+def gradient_descent(theta, X, y, alpha=0.01, lambda_=0.0001):
     previous_theta = [x for x in theta]
     for j in range(len(previous_theta)):
         total_change = 0.0
         for i in range(len(X)):
             total_change += (dot(X[i], previous_theta) - y[i])*X[i][j]
-        theta[j] -= (alpha)/(len(X))*total_change
+        theta[j] = theta[j] - (alpha)/(len(X))*total_change + (lambda_/len(X))*theta[j]
     return theta
 
 for i in range(10000):
