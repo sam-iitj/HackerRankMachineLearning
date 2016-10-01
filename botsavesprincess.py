@@ -19,7 +19,7 @@ def displayPathtoPrincess(n,grid):
         elif target_pos[0] - start_pos[0] < 0:
             print "UP"
             start_pos[0] -= start_pos[0]
-        elif target_pos[0] - start_pos[0]:
+        elif target_pos[0] - start_pos[0] > 0:
             print "DOWN"
             start_pos[0] += start_pos[0]
 
